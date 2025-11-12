@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .handwriting { font-family: 'Caveat', cursive; }
+        
+        /* Smooth transition for the No button */
+        #no-button {
+            transition: all 0.2s ease;
+            position: relative; 
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Custom Scrollbar for the letter */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #fce7f3;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #f472b6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-pink-100 min-h-screen flex items-center justify-center p-4 relative">
+
+    <!-- Floating Hearts Background -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-10 left-10 text-pink-200 text-4xl animate-pulse">♥</div>
+        <div class="absolute bottom-20 right-20 text-pink-200 text-6xl animate-bounce">♥</div>
+        <div class="absolute top-1/2 right-10 text-pink-200 text-3xl">♥</div>
+        <div class="absolute bottom-10 left-1/3 text-pink-200 text-5xl animate-pulse">♥</div>
+    </div>
+
+    <!-- Main Card -->
+    <div id="main-card" class="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl p-6 md:p-10 max-w-2xl w-full relative z-10 border-2 border-pink-100 fade-in flex flex-col max-h-[90vh]">
+        
+        <!-- Content Area -->
+        <div id="content-area" class="flex flex-col h-full">
+            
+            <!-- Header Image: Bear Holding Hands (Main Question) -->
+            <div class="flex-shrink-0 text-center mb-4">
+                <img src="https://tenor.com/nnAg8r4jIfL.gif" 
+                     alt="Cute Bears Holding Hands GIF" 
+                     class="w-32 h-32 mx-auto rounded-2xl shadow-md object-cover"
+                     onerror="this.src='https://placehold.co/160x160/FFC0CB/333333?text=Cute+Bear'">
+            </div>
+
+            <!-- The Letter (Scrollable area) -->
+            <div class="flex-grow overflow-y-auto custom-scrollbar mb-6 pr-2 text-left bg-pink-50 p-5 rounded-xl border border-pink-100">
+                <h2 class="handwriting text-3xl text-pink-600 mb-4 font-bold">To my missing piece,</h2>
+                
+                <div class="text-gray-700 leading-relaxed text-base md:text-lg space-y-4">
+                    <p>You are just soooo amazing, baby. I love how we connect so naturally. It really feels like you’ve always been part of my life, like you’re the missing piece I didn’t even know I needed. You understand me, and you always try to understand me even more. You care about how I feel, and you genuinely want to make me happy.</p>
+
+                    <p>And I love how clingy you are, baby. <strong>PATYA nalang ko if mapunta na nga clingy side sa lain 😭😭😭.</strong> Might sound greedy, but YESSSS I’M GREEDY WHEN IT COMES TO YOU. I want you all for myself. I want to be the person who makes your day better, the person you think about at night, the one who makes you smile. I want to be the man who takes good care of you and gives you love every single day.</p>
+
+                    <p>Ganahan kaayo ko nga ako ra ang guy nga makafeel sa imong clingy side, kay I REALLY LOVE IT. This is the first time nga I felt someone is genuinely glad nga ako ilang person, and not scared to show me off. And NO, I’m not letting you go anywhere na jud 😤😤😤. <strong>YOU’RE MINE. And if you think dili pa then… I WILL MAKE YOU MINE 😤😤😤.</strong></p>
+
+                    <p>I like everything about you baby, and I don’t want to change anything sa imoha. GOSH, YOU ARE SOOOO PRETTY AND AMAZING. I love how you try to communicate with my parents even though sa first shy kaayo ka, BUWAHAHAHA. I appreciate it so much nga you want to get to know them, that effort means a lot to me.</p>
+
+                    <p>I love when kiligon ka. CUTEEE KAAYU! I love how you think about the future and your plans. I love how you care for your family and your kuyas and ate. And I love how you make me feel, always giving me butterflies even though I’m not chasing butterflies. You just bring them out sa akong tiyan all the time.🦋✨</p>
+
+                    <p>So baby… if okay nimo…🥹</p>
+                    
+                    <p>Ik man nga we’re already showing love to each other… but I really want to ask you this:</p>
+                </div>
+            </div>
+
+            <!-- The Big Question (Fixed at bottom of card) -->
+            <div class="flex-shrink-0 text-center pt-2 border-t border-pink-100">
+                <h1 class="text-xl md:text-2xl font-black text-pink-600 mb-6 px-2 leading-tight">
+                    May I court you, and keep courting you — until the moment you are ready to give me your YES? 🙏🏼💗
+                </h1>
+
+                <!-- Buttons -->
+                <div class="flex flex-row justify-center items-center gap-4 relative h-16">
+                    <button id="yes-button" 
+                            class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 transition-all duration-200 z-20 whitespace-nowrap">
+                        Yes 🥺
+                    </button>
+                    
+                    <button id="no-button" 
+                            class="bg-gray-200 text-gray-500 font-bold py-3 px-8 rounded-full text-lg cursor-not-allowed z-20 whitespace-nowrap">
+                        No
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Message (Hidden initially) -->
+        <div id="success-message" class="hidden flex flex-col items-center justify-center h-full text-center py-4">
+            <!-- Success Image: Bear Kissing (After Yes is clicked) -->
+            <img src="https://tenor.com/bwDtF.gif" 
+                 class="w-48 h-48 mx-auto mb-6 rounded-full shadow-xl border-4 border-pink-200" 
+                 alt="Celebration">
+            <h2 class="text-4xl font-black text-pink-600 mb-4">YAY!!! 💖</h2>
+            <p class="text-xl text-gray-700 font-medium mb-2">Get ready to be loved everyday!</p>
+            <p class="text-lg text-gray-500 italic">You are stuck with me now! 😤🥰</p>
+        </div>
+
+    </div>
+
+    <script>
+        const noButton = document.getElementById('no-button');
+        const yesButton = document.getElementById('yes-button');
+        const contentArea = document.getElementById('content-area');
+        const successMessage = document.getElementById('success-message');
+        const mainCard = document.getElementById('main-card');
+
+        // Function to move the button
+        function moveButton() {
+            // Calculate random position within the viewport
+            // We use fixed positioning to let it roam the whole screen freely
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth - 20);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight - 20);
+
+            noButton.style.position = 'fixed'; // Change to fixed so it can escape the container
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+            noButton.style.zIndex = '100'; // Make sure it floats above everything
+            
+            // Add a little rotation for fun
+            const rotation = (Math.random() * 20) - 10;
+            noButton.style.transform = `rotate(${rotation}deg)`;
+            
+            // Change text playfully sometimes
+            const phrases = ["No", "Try Again", "Nope", "Too Slow", "Can't catch me", "Just click Yes"];
+            const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+            noButton.innerText = randomPhrase;
+        }
+
+        // Event listeners for the "No" button
+        noButton.addEventListener('mouseover', moveButton); // For mouse users
+        noButton.addEventListener('click', moveButton); // For touch users
+        noButton.addEventListener('touchstart', (e) => { // improved mobile touch
+             e.preventDefault(); // prevent click
+             moveButton();
+        });
+
+        // Event listener for the "Yes" button
+        yesButton.addEventListener('click', () => {
+            // Hide content
+            contentArea.style.display = 'none';
+            // Show success
+            successMessage.classList.remove('hidden');
+            // Add confetti background effect
+            document.body.classList.remove('bg-pink-100');
+            document.body.classList.add('bg-pink-200');
+            
+            // Reset No button just in case it's floating around
+            noButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
